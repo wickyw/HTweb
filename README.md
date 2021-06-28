@@ -17,10 +17,14 @@ Next, download and install FuelPHP itself using composer `$ composer update` in 
 ## Configuration and setup
 ### Setting up a MariaDB database
 First, install MariaDB and MariaDB-server, if you have not already.
+
 For example, on Fedora, run: `$ sudo dnf install mariadb mariadb-server`
 Then, enable the MariaDB-server systemctl file with `systemctl enable --now mariadb.service`.
+
 Now, setup your server using `mariadb-secure-installation`. Say yes to all, and enter a password.
+
 Log in to your MariaDB server, and set up a new database and a user. Enter the credentials in the file at `fuel/app/config/db.php`.
+
 For production environments please be sure to configure both `auth.php` and `ormauth.php` as well.
 
 ## Migrations
