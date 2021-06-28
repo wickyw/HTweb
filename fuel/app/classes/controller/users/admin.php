@@ -73,6 +73,11 @@ class Controller_Users_Admin extends Controller_Core_Theme {
 	}
 	
 	public function post_edit($id = null) {
+	    $config = array(
+	        'path' => DOCROOT.'files',
+            'randomize' => true,
+            'ext_whitelist' => array('img','jpg','jpeg','gif','png'),
+        );
 		$user = \Utils::valid_user($id);
 		$val = \Model_User::validate('edit');		
 		$val->add('password', 'new password')->add_rule('min_length', 5);
@@ -91,7 +96,15 @@ class Controller_Users_Admin extends Controller_Core_Theme {
 			$user->email = Input::post('email', '');
 			$user->iban = Input::post('iban');
 			$user->lang = Input::post('lang');	
-			
+
+			Upload::process($config);
+            if(Upload::is_valid()){
+                Upload::save(0);
+                $file = Upload::get_files(0);
+                $user->avatar = 'files/'.$file['saved_as'];
+            }
+
+
 			try {
 				\Security::htmlentities($user)->save();
 				Session::set_flash('success', __('user.alert.success.update'));

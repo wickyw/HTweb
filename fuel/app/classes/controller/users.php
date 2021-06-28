@@ -17,7 +17,7 @@ class Controller_Users extends Controller_Core_Theme
 		if(!isset($user) || empty($user->avatar)) {
 			Response::redirect('/assets/img/wall/placeholder.jpg');
 		}		
-		Response::redirect('/files/users/avatar/'. $user->avatar);
+		Response::redirect($user->avatar);
 	}
 
 	public function action_view($id = null)	{	
