@@ -1,28 +1,30 @@
 # HTweb
-FuelPHP based web application for dorm administration. Developed and maintained by Melcher.
+FuelPHP based web application for dorm administration. Initially developed by Melcher Stikkelorum, now maintained by Wick Wijnholds with patches from Tom Veldman.
 
 ## Features
 * Complete point based diner tracking module including enrollments of guests, cooks and dishwashers. 
 * Product module for easy cost logging
 * Receipt module including cost distribution tools
 * Bilingual user interface (Dutch and English)
-
-## Dependencies
-### PHP 7.1
-Unfortunately there is no php7.1 package in the official ubuntu xenial archive.
-To *upgrade* your existing php installation, take the steps below: 
-1. `$ add-apt-repository ppa:ondrej/php`
-2. `$ apt update`
-3. `$ apt purge php7.0 php7.0-common`
-4. `$ apt install php7.1` 
-
+## Installation
+### PHP 7.4
+Install using the official installation instructions, found at https://www.php.net/manual/en/install.php.
+Also install Composer, preferably using your distributions' package manager.
 ### FuelPHP
 (Optional) Install oil standalone `$ curl get.fuelphp.com/oil | sh`.
-Next, download and install FuelPHP itself using composer `$ php composer.phar update`.
+Next, download and install FuelPHP itself using composer `$ composer update` in the project folder.
 
-## Configuration
-Configuration files reside in the `fuel\app\config` directory.
-Be sure to enter your database credentials in the `db.php` file.
+## Configuration and setup
+### Setting up a MariaDB database
+First, install MariaDB and MariaDB-server, if you have not already.
+
+For example, on Fedora, run: `$ sudo dnf install mariadb mariadb-server`
+Then, enable the MariaDB-server systemctl file with `systemctl enable --now mariadb.service`.
+
+Now, setup your server using `mariadb-secure-installation`. Say yes to all, and enter a password.
+
+Log in to your MariaDB server, and set up a new database and a user. Enter the credentials in the file at `fuel/app/config/db.php`.
+
 For production environments please be sure to configure both `auth.php` and `ormauth.php` as well.
 
 ## Migrations
