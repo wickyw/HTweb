@@ -1,5 +1,5 @@
 # HTweb
-FuelPHP based web application for dorm administration. Initially developed by Melcher Stikelorum, now maintained by Wick Wijnholds with patches from Tom Veldman.
+FuelPHP based web application for dorm administration. Initially developed by Melcher Stikkelorum, now maintained by Wick Wijnholds with patches from Tom Veldman.
 
 ## Features
 * Complete point based diner tracking module including enrollments of guests, cooks and dishwashers. 
