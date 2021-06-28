@@ -6,14 +6,13 @@ FuelPHP based web application for dorm administration. Initially developed by Me
 * Product module for easy cost logging
 * Receipt module including cost distribution tools
 * Bilingual user interface (Dutch and English)
-
-## Dependencies
+## Installation
 ### PHP 7.4
 Install using the official installation instructions, found at https://www.php.net/manual/en/install.php.
-
+Also install Composer, preferable using your distributions' package manager.
 ### FuelPHP
 (Optional) Install oil standalone `$ curl get.fuelphp.com/oil | sh`.
-Next, download and install FuelPHP itself using composer `$ php composer.phar update`.
+Next, download and install FuelPHP itself using composer `$ composer update` in the project folder.
 
 ## Configuration and setup
 ### Setting up a MariaDB database
