@@ -4,7 +4,7 @@ foreach(Auth::groups() as $group) {
 } 
 ?>
 
-<?=Form::open()?>
+<?=Form::open(array('enctype'=> 'multipart/form-data'))?>
 	<div class="row">
 		<div class="col-md-6">
 			<div class="form-group">
@@ -19,6 +19,10 @@ foreach(Auth::groups() as $group) {
 				<?=Form::label('Surname', 'surname', array('class'=>'control-label'))?>
 				<?=Form::input('surname', Input::post('surname', isset($user) ? $user->surname : ''), array('class' => 'col-md-4 form-control', 'placeholder'=>'Surname'))?>
 			</div>
+            <div class="form-group">
+                <?=Form::label('Avatar','avatar', array('class' => 'control-label'))?>
+                <?=Form::file('avatar', array('class' => 'col-md-4 form-control', 'placeholder'=>'Avatar'))?>
+            </div>
 			<div class="form-group">
 				<div class="checkbox">
 					<label>
