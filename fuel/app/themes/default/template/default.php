@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-=======
-<?php
-
-?>
->>>>>>> de8baba (Add autocomplete file)
 <!DOCTYPE html>
 <html>
 <head>	
