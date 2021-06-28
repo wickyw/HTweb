@@ -11,7 +11,7 @@ FuelPHP based web application for dorm administration. Initially developed by Me
 Install using the official installation instructions, found at https://www.php.net/manual/en/install.php.
 Also install Composer, preferably using your distributions' package manager.
 ### FuelPHP
-(Optional) Install oil standalone `$ curl get.fuelphp.com/oil | sh`.
+(Optional) Install oil standalone using `$ curl https://get.fuelphp.com/oil | sh`.
 Next, download and install FuelPHP itself using composer `$ composer update` in the project folder.
 
 ## Configuration and setup
