@@ -12,6 +12,7 @@ Install using the official installation instructions, found at https://www.php.n
 Also install Composer, preferably using your distributions' package manager.
 ### FuelPHP
 (Optional) Install oil standalone using `$ curl https://get.fuelphp.com/oil | sh`.
+
 Next, download and install FuelPHP itself using composer `$ composer update` in the project folder.
 
 ## Configuration and setup
