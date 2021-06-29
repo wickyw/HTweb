@@ -101,7 +101,19 @@ class Controller_Users_Admin extends Controller_Core_Theme {
             if(Upload::is_valid()){
                 Upload::save(0);
                 $file = Upload::get_files(0);
-                $user->avatar = 'files/'.$file['saved_as'];
+                if(!$file['error']){
+                    $old_file = $user->avatar;
+                    $user->avatar = 'files/'.$file['saved_as'];
+                    $area = \File::forge(array(
+                        'basedir'   =>  DOCROOT,
+                        'use_locks' =>  true,
+                    ));
+                    try {
+                        \File::delete($old_file, $area);
+                    } catch (InvalidPathException | FileAccessException $e) {
+                        // TODO: do something when file not found or not accessible.
+                    }
+                }
             }
 
 
